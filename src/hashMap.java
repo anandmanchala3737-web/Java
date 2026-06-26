@@ -14,7 +14,6 @@ public class hashMap {
     }
     // -----------------**********--------------------
     static void margeSort(int[] arr, int low, int high){
-        int mid = (low+high)/2;
         if(low>=high)
            return ;
 
