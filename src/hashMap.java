@@ -2,7 +2,6 @@ import java.util.*;
 public class hashMap {
     public static void main(String[] args) {
         int[] arr={1,2,3,0,4,5};
-        Solution sol = new Solution();
         System.out.println("Bubble Sort:");
         display(Bubble_sort(arr));
         System.out.println("\nInsertion Sort:");
@@ -10,7 +9,7 @@ public class hashMap {
         System.out.println("\nQuick sort:");
         display(qs(arr, 0, arr.length-1));
         System.out.print("\nMarge sort:");
-        display(sol.margeSort(arr,0,arr.length-1));
+        margeSort(arr,0,arr.length-1);
     }
     // -----------------**********--------------------
     static void margeSort(int[] arr, int low, int high){
