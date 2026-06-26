@@ -10,15 +10,20 @@ public class hashMap {
         display(qs(arr, 0, arr.length-1));
         System.out.print("\nMarge sort:");
         margeSort(arr,0,arr.length-1);
+        display(marge);
     }
     // -----------------**********--------------------
     static void margeSort(int[] arr, int low, int high){
         int mid = (low+high)/2;
-        if(low>=high){
+        if(low>=high)
+           return ;
+
+        int mid = (low+high)/2;
+
             margeSort(arr,low,mid);
             margeSort(arr,mid+1,high);
             marge(arr,mid,low,high);
-        }
+        
     }
 
     static void marge(int[] arr, int mid, int low, int high){
