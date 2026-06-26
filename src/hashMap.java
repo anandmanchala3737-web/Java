@@ -1,7 +1,7 @@
 import java.util.*;
 public class hashMap {
     public static void main(String[] args) {
-        int[] arr={1,2,3,0,4,5};
+        int[] arr = {34, 12, 78, 9, 56, 1, 90, 45, 23, 67, 89, 10, 5, 99, 32};
         System.out.println("Bubble Sort:");
         display(Bubble_sort(arr));
         System.out.println("\nInsertion Sort:");
