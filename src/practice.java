@@ -1,32 +1,38 @@
 
-import java.util.Scanner;
 
 public class practice {
 
     public static void main(String[] args) {
-        Scanner s =new Scanner(System.in);
-        int hashArr[]=new int[6];
-        int n;
-        System.out.println("Enter the no.of elements:");
-        n=s.nextInt();
-        int[] arr = new int[n];
-        System.out.println("Enter the numners:");
-        for(int i =0; i<n; i++){
-            arr[i] =s.nextInt();
-        }
-        // System.out.println();
-        // for(int i=0; i<n; i++){
-        //     System.out.println(arr[i]);
-        // }
 
-        for(int i=0; i<n-1; i++){
-            hashArr[arr[i]]++;
+        int[] arr={1000,12,-3,-10,4,-5,0};
+        int n = arr.length;
+        System.out.println("Before Sort:");
+        for(int i : arr){
+            System.out.print(i+" ");
+        }
+        bubbleRecursive(arr, n);
+        System.out.println("\nAfter Sort:");
+        for(int i : arr){
+            System.out.print(i+" ");
         }
 
-        for(int i=0; i<6; i++){
-            System.out.println(i+"->"+hashArr[i]);
-        }
 
-        s.close();
     }   
+    static void bubbleRecursive(int[] arr , int n){
+
+        if(n==1){
+            return ;
+        }
+
+
+        
+        for(int i=0; i<=n-2; i++){
+            if(arr[i]>arr[i+1]){
+                int temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+            }
+        }
+        bubbleRecursive(arr, n-1);
+    }
 }

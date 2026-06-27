@@ -19,14 +19,17 @@ public class practice {
         //     System.out.println(arr[i]);
         // }
 
-        for(int i=0; i<n-1; i++){
+        for(int i=0; i<n; i++){
             hashArr[arr[i]]++;
         }
+
 
         for(int i=0; i<6; i++){
             System.out.println(i+"->"+hashArr[i]);
         }
 
         s.close();
+
+
     }   
 }

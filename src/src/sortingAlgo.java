@@ -2,7 +2,6 @@ import java.util.*;
 public class sortingAlgo {
     public static void main(String[] args) {
         int[] arr={1000,12,-3,-10,4,-5,0};
-        int n = arr.length;
         System.out.println("Selection sort");
         display(Selection_sort(arr));
         System.out.println("\nBubble Sort:");
@@ -13,9 +12,6 @@ public class sortingAlgo {
         display(qs(arr, 0, arr.length-1));
         System.out.print("\nMarge sort:\n");
         margeSort(arr,0,arr.length-1);
-        display(arr);
-        System.out.print("\nRecursive Bubble Sort:\n");
-        bubbleRecursive(arr, n);
         display(arr);
     }
     // -----------------**********--------------------
@@ -100,22 +96,6 @@ public class sortingAlgo {
             }
         }
     return arr;
-    }
-// ----------------********************---------------------
-static void bubbleRecursive(int[] arr , int n){
-
-        if(n==1){
-            return ;
-        }
-
-        for(int i=0; i<=n-2; i++){
-            if(arr[i]>arr[i+1]){
-                int temp = arr[i];
-                arr[i] = arr[i+1];
-                arr[i+1] = temp;
-            }
-        }
-        bubbleRecursive(arr, n-1);
     }
 // ---------------------****************---------------------------
     static int[] insertion_sort(int[] arr){

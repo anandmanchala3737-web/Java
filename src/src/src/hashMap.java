@@ -1,30 +1,23 @@
 import java.util.*;
-public class sortingAlgo {
+public class hashMap {
     public static void main(String[] args) {
-        int[] arr={1000,12,-3,-10,4,-5,0};
-        int n = arr.length;
-        System.out.println("Selection sort");
-        display(Selection_sort(arr));
-        System.out.println("\nBubble Sort:");
+        int[] arr = {34, 12, 78, 9, 56, 1, 90, 45, 23, 67, 89, 10, 5, 99, 32};
+        System.out.println("Bubble Sort:");
         display(Bubble_sort(arr));
         System.out.println("\nInsertion Sort:");
         display(insertion_sort(arr));
         System.out.println("\nQuick sort:");
         display(qs(arr, 0, arr.length-1));
-        System.out.print("\nMarge sort:\n");
+        System.out.print("\nMarge sort:");
         margeSort(arr,0,arr.length-1);
-        display(arr);
-        System.out.print("\nRecursive Bubble Sort:\n");
-        bubbleRecursive(arr, n);
         display(arr);
     }
     // -----------------**********--------------------
     static void margeSort(int[] arr, int low, int high){
-        if(low>=high){
-            return;
-        }
+        if(low>=high)
+           return ;
 
-            int mid = (low+high)/2;
+        int mid = (low+high)/2;
 
             margeSort(arr,low,mid);
             margeSort(arr,mid+1,high);
@@ -101,58 +94,25 @@ public class sortingAlgo {
         }
     return arr;
     }
-// ----------------********************---------------------
-static void bubbleRecursive(int[] arr , int n){
-
-        if(n==1){
-            return ;
-        }
-
-        for(int i=0; i<=n-2; i++){
-            if(arr[i]>arr[i+1]){
-                int temp = arr[i];
-                arr[i] = arr[i+1];
-                arr[i+1] = temp;
-            }
-        }
-        bubbleRecursive(arr, n-1);
-    }
 // ---------------------****************---------------------------
     static int[] insertion_sort(int[] arr){
         int n = arr.length;
         for(int i=1; i<=n-1; i++){
             int j=i;
             while(j>0 && arr[j-1]>arr[j]){
-                swap(arr,j,j-1);       
+                    int temp=arr[j];
+                    arr[j]=arr[j-1];
+                    arr[j-1]=temp;        
                     j--;  
             }
         }
         return arr;
     }
-    // ----------------***************-------------------------
-    static int[] Selection_sort(int[] arr){
-
-        int n = arr.length;
-        for(int i=0; i<=n-2; i++){
-           int min=i;
-            for(int j = i+1; j<=n-1; j++){
-                if(arr[min]>arr[j]){
-                    min = j;
-                }
-            }
-            swap(arr,min,i);
-        }
-
-        return arr;
-
-    }
-    // --------------------------*********--------------------
     static void swap(int[] arr, int i, int j){
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
-    // --------------------*************--------------------
     static void display(int[] arr){
         for(int num : arr){
             System.out.print(num + " ");
